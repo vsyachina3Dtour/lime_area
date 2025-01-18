@@ -1,0 +1,240 @@
+﻿<krpano version="1.20.7" title="3DTour">
+
+	<include url="skin/vtourskin.xml" />
+
+	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... Look at vtourskin -->
+	<skin_settings maps="false" />
+	
+	<!-- startup action - load the first scene -->
+	<action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+	</action>
+	
+	<!--  -->
+	<events name="testing" keep="true" onmousedown="showlog();show_coord();" onmouseup="show_view();" />
+
+	<action name="show_coord">
+	
+		screentosphere(mouse.x, mouse.y, toh, tov);
+		roundval(toh,2);
+		roundval(tov,2);
+		trace('ath="', get(toh), '"  atv="', get(tov) , '" ');
+	</action>
+ 
+	<action name="show_view">
+		copy(h, view.hlookat);
+		roundval(h,2);
+		trace(get(h));
+	</action>
+
+
+	
+	<scene name="s1" title="1" onstart="" thumburl="img/1.tiles/thumb.jpg" lat="9.15995370" lng="99.85922073" heading="0.0">
+
+		<view hlookat="140.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140"  limitview="fullrange" />
+
+		<preview url="img/1.tiles/preview.jpg" />
+
+		<image>
+			<cube url="img/1.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2048" />
+		</image>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_1"
+					ath="-170" atv="-4"
+					linkedscene="s2" 
+					linkedscene_lookat="-68, 0, 120" 
+					rotate="0"
+		/>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_2"
+					ath="158" atv="-4"
+					linkedscene="s3" 
+					linkedscene_lookat="100, 0, 120" 
+					rotate="0"
+		/>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_3"
+					ath="91" atv="-4"
+					linkedscene="s4" 
+					linkedscene_lookat="25, 0, 120" 
+					rotate="0"
+		/>
+		
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_4"
+					ath="132" atv="-12	"
+					linkedscene="s5" 
+					linkedscene_lookat="-20, 0, 120" 
+					rotate="0"
+		/>
+
+	</scene>
+
+	<scene name="s2" title="2" onstart="" thumburl="img/2.tiles/thumb.jpg" lat="9.15984774" lng="99.85919809" heading="0.0">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140"  limitview="fullrange" />
+
+		<preview url="img/2.tiles/preview.jpg" />
+
+		<image>
+			<cube url="img/2.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2048" />
+		</image>
+		
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_1"
+					ath="102" atv="-4"
+					linkedscene="s1" 
+					linkedscene_lookat="4, 0, 120" 
+					rotate="0"
+		/>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_2"
+					ath="-123" atv="-4"
+					linkedscene="s3" 
+					linkedscene_lookat="80, 0, 120" 
+					rotate="0"
+		/>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_3"
+					ath="156" atv="-4"
+					linkedscene="s4" 
+					linkedscene_lookat="-15, 0, 120" 
+					rotate="0"
+		/>
+		
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_4"
+					ath="173" atv="-12	"
+					linkedscene="s5" 
+					linkedscene_lookat="-60, 0, 120" 
+					rotate="0"
+		/>
+
+	</scene>
+
+	<scene name="s3" title="3" onstart="" thumburl="img/3.tiles/thumb.jpg" lat="9.15970295" lng="99.85925536" heading="0.0">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140"  limitview="fullrange" />
+
+		<preview url="img/3.tiles/preview.jpg" />
+
+		<image>
+			<cube url="img/3.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2048" />
+		</image>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_1"
+					ath="-42" atv="-4"
+					linkedscene="s1" 
+					linkedscene_lookat="-30, 0, 120" 
+					rotate="0"
+		/>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_2"
+					ath="-58" atv="-4"
+					linkedscene="s2" 
+					linkedscene_lookat="35, 0, 120" 
+					rotate="0"
+		/>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_3"
+					ath="-1" atv="-4"
+					linkedscene="s4" 
+					linkedscene_lookat="-65, 0, 120" 
+					rotate="0"
+		/>
+		
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_4"
+					ath="-15" atv="-12	"
+					linkedscene="s5" 
+					linkedscene_lookat="-135, 0, 120" 
+					rotate="0"
+		/>
+
+	</scene>
+
+	<scene name="s4" title="4" onstart="" thumburl="img/4.tiles/thumb.jpg" lat="9.15981301" lng="99.85931530" heading="0.0">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140"  limitview="fullrange" />
+
+		<preview url="img/4.tiles/preview.jpg" />
+
+		<image>
+			<cube url="img/4.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2048" />
+		</image>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_1"
+					ath="-151" atv="-4"
+					linkedscene="s1" 
+					linkedscene_lookat="-86, 0, 120" 
+					rotate="0"
+		/>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_2"
+					ath="179" atv="-4"
+					linkedscene="s2" 
+					linkedscene_lookat="-10, 0, 120" 
+					rotate="0"
+		/>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_3"
+					ath="125" atv="-4"
+					linkedscene="s3" 
+					linkedscene_lookat="165, 0, 120" 
+					rotate="0"
+		/>
+		
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_4"
+					ath="146" atv="-12	"
+					linkedscene="s5" 
+					linkedscene_lookat="90, 0, 120" 
+					rotate="0"
+		/>
+
+	</scene>
+
+	<scene name="s5" title="5" onstart="" thumburl="img/5.tiles/thumb.jpg" lat="9.15982881" lng="99.85930783" heading="0.0">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140"  limitview="fullrange" />
+
+		<preview url="img/5.tiles/preview.jpg" />
+
+		<image>
+			<cube url="img/5.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2048" />
+		</image>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_1"
+					ath="176" atv="3"
+					linkedscene="s1" 
+					linkedscene_lookat="-56, 0, 120" 
+					rotate="0"
+		/>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_2"
+					ath="130" atv="3"
+					linkedscene="s2" 
+					linkedscene_lookat="-10, 0, 120" 
+					rotate="0"
+		/>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_3"
+					ath="43" atv="3"
+					linkedscene="s3" 
+					linkedscene_lookat="155, 0, 120" 
+					rotate="0"
+		/>
+		
+		<hotspot 	style="skin_hotspotstyle" name="hs_4"
+					ath="-107" atv="3"
+					linkedscene="s4" 
+					linkedscene_lookat="-40, 0, 120" 
+					rotate="0"
+		/>
+
+	</scene>
+
+
+</krpano>
