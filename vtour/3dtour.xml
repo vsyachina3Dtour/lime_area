@@ -12,9 +12,9 @@
 		if(startactions !== null, startactions() );
 	</action>
 	
-	<!-- 
+	<!--  
 	<events name="testing" keep="true" onmousedown="showlog();show_coord();" onmouseup="show_view();" />
- -->
+
 	<action name="show_coord">
 	
 		screentosphere(mouse.x, mouse.y, toh, tov);
@@ -28,7 +28,7 @@
 		roundval(h,2);
 		trace(get(h));
 	</action>
-
+-->
 
 	
 	<scene name="s1" title="1" onstart="" thumburl="img/1.tiles/thumb.jpg" lat="9.15995370" lng="99.85922073" heading="0.0">
