@@ -12,9 +12,9 @@
 		if(startactions !== null, startactions() );
 	</action>
 	
-	<!--  -->
+	<!-- 
 	<events name="testing" keep="true" onmousedown="showlog();show_coord();" onmouseup="show_view();" />
-
+ -->
 	<action name="show_coord">
 	
 		screentosphere(mouse.x, mouse.y, toh, tov);
